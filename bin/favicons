@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+convert public/favicon.png -resize 256x256 -transparent white public/favicon-256.png
+convert public/favicon-256.png -resize 16x16 public/favicon-16.png
+convert public/favicon-256.png -resize 32x32 public/favicon-32.png
+convert public/favicon-256.png -resize 64x64 public/favicon-64.png
+convert public/favicon-256.png -resize 96x96 public/favicon-96.png
+convert public/favicon-256.png -resize 128x128 public/favicon-128.png
+convert public/favicon-256.png -resize 160x160 public/favicon-160.png
+convert public/favicon-256.png -resize 196x196 public/favicon-196.png
+convert public/favicon-16.png public/favicon-32.png public/favicon-64.png public/favicon-96.png public/favicon-128.png public/favicon-160.png public/favicon-196.png public/favicon-256.png -colors 256 public/favicon.ico
+
+# Apple
+
+convert public/favicon-256.png -resize 60x60 public/favicon-60.png
+convert public/favicon-256.png -resize 72x72 public/favicon-72.png
+convert public/favicon-256.png -resize 76x76 public/favicon-76.png
+convert public/favicon-256.png -resize 114x114 public/favicon-114.png
+convert public/favicon-256.png -resize 120x120 public/favicon-120.png
+convert public/favicon-256.png -resize 144x144 public/favicon-144.png
+convert public/favicon-256.png -resize 152x152 public/favicon-152.png
+convert public/favicon-256.png -resize 180x180 public/favicon-180.png
+
+# MS (check browserconfig.xml)
+
+convert public/favicon-256.png -resize 70x70 public/favicon-70.png
+convert public/favicon-256.png -resize 150x150 public/favicon-150.png
+convert public/favicon-256.png -resize 310x310 public/favicon-310.png

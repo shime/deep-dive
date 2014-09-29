@@ -1,0 +1,56 @@
+---
+markdown: redcarpet
+highlighter: pygments
+
+permalink: /:title
+
+title: Deep Dive
+tagline: Learning how things work is deliberate practice for programmers. In these articles, I explore interesting Ruby and JavaScript libraries, peek under the hood and demystify their magic.
+description: Learning how things work is deliberate practice for programmers. In these articles, I explore interesting Ruby and JavaScript libraries, peek under the hood and demystify their magic.
+url: https://deepdive.sh
+baseurl: /
+
+author:
+  name: Hrvoje Šimić
+  email: shime.ferovac@gmail.com
+  info: I'm a web developer focused on building minimum viable products with Ruby on Rails and Stimulus.
+  twitter: shime_sh
+  picture: /public/shime.jpg
+
+version: 1.0.0
+
+twitter:
+  username: shime_sh
+  picture: /public/social3.jpg
+  card: summary
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /public/social3.jpg
+
+safe: false
+
+navigation:
+  - title: Articles
+    url: /
+
+plugins:
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-responsive-image
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.babel.js
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - src
+  - tailwind.config.js
+  - Makefile

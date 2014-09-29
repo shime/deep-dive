@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+resume export --theme stackoverflow resume.html && mv resume.html resume/index.html

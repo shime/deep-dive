@@ -1,0 +1,20 @@
+{% comment %}
+Render your responsive images using <img srcset>, with the largest resized image used as a fallback.
+
+Usage:
+
+	{% responsive_image path: assets/image.jpg alt: "A description of the image" %}
+
+(P.S. You can safely delete this comment block)
+{% endcomment %}
+
+{% assign smallest = resized | sort: 'width' | first %}
+{% capture srcset %}
+{% for i in resized %}
+    /{{ i.path }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
+
+<div class="column">
+  <img src="/{{ smallest.path }}" srcset="{{ srcset | strip_newlines }}" data-zoom-src="/{{ path }}" alt="{{ alt }}" sizes="(max-width: 480px) 280px, 480px" data-zoomable="true">
+</div>

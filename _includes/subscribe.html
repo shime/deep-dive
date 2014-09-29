@@ -1,0 +1,16 @@
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/twobucks"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/twobucks', 'popupwindow')"
+  class="embeddable-buttondown-form"
+>
+  <div class="flex max-w-sm m-auto">
+    <input type="email" name="email" id="bd-email" class="bg-grey-lighter appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="Enter your best email address">
+    <input type="hidden" value="1" name="embed"></input>
+    {% if include.tag %}
+    <input type="hidden" name="tag" value="{{ include.tag }}" />
+    {% endif %}
+    <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+  </div>
+</form>

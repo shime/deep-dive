@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  {% include head.html %}
+
+  <body class="font-sans">
+    <div class="w-full flex content-center justify-center">
+      <div class="lg:pt-16 lg:pb-32 p-6 relative">
+        {% include navigation.html %}
+
+        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+    {% include bottom.html %}
+  </body>
+</html>

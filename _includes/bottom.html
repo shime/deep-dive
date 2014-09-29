@@ -1,0 +1,46 @@
+<script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
+</script>

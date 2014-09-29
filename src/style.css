@@ -1,0 +1,275 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+body {
+  overflow-y: overlay;
+}
+
+a {
+  @apply text-black font-bold no-underline font-extrabold;
+}
+
+.page-description {
+  @apply mb-16;
+}
+
+.books {
+  & img {
+    @apply w-64;
+  }
+
+  & .column {
+    @apply p-12 text-center;
+    @apply bg-blue-lightest;
+    @apply border-t-4 border-blue-light;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+
+    & p {
+      @apply text-grey-dark mt-8 text-left;
+    }
+  }
+}
+
+.columns {
+  column-count: 3;
+  columns: 480px;
+  margin: 0 auto;
+  @apply mb-12;
+
+  & .column {
+    margin: 0;
+    margin-bottom: 25px;
+    width: 480px;
+  }
+}
+
+.medium-zoom-overlay {
+  @apply z-30;
+
+  & ~ img {
+    @apply z-30;
+  }
+}
+
+blockquote {
+  @apply bg-grey-lightest border-l-4 border-grey-light text-black px-4 py-3 mb-4 italic;
+}
+
+blockquote p:first-child:before {
+  content: "\201C";
+}
+
+blockquote p:first-child:after {
+  content: "\201D";
+}
+
+
+.post {
+  word-wrap: break-word;
+
+  & a {
+    @apply underline font-bold;
+
+    &.anchorjs-link {
+      @apply no-underline;
+    }
+
+    &.no-underline {
+      @apply no-underline;
+    }
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    @apply font-extrabold text-black leading-tight;
+  }
+
+  & h2 {
+    @apply mt-12 mb-4;
+  }
+
+  & h3 {
+    @apply mt-12 mb-4;
+  }
+
+  & p {
+    @apply my-4;
+  }
+
+  & h2 + p {
+    @apply mt-0;
+  }
+
+  & code {
+    @apply text-sm text-black leading-normal font-mono;
+    @apply bg-grey-lighter p-2 py-0;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+      monospace;
+  }
+
+  & pre {
+    @apply text-sm leading-normal font-mono;
+
+    display: block;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+
+    & code {
+      @apply bg-transparent p-0;
+      color: #f8f8f2;
+    }
+  }
+
+  & .highlight > pre {
+    @apply mb-4 p-4;
+  }
+
+  & > .highlight .emphasized {
+    & span {
+      opacity: 0.3;
+    }
+
+    & span.hll {
+      opacity: 1;
+
+      & span {
+        opacity: 1;
+      }
+    }
+  }
+
+  & figure {
+    @apply my-8 flex flex-col items-center justify-center;
+  }
+
+  & figure.highlight {
+    @apply inline;
+  }
+
+  & figcaption {
+    @apply text-xs text-grey mb-2;
+  }
+
+  & hr {
+    @apply my-8 border-grey-lighter border-t;
+  }
+
+  & .source-location {
+    @apply bg-blue-lightest border-b-4 border-blue-light text-blue-darkest px-4 py-2 text-sm flex justify-start items-start;
+
+    & a {
+      @apply no-underline;
+    }
+  }
+
+
+  & strong {
+    @apply font-bold text-black;
+  }
+
+  & .twitter-tweet {
+    @apply m-auto py-4;
+  }
+}
+
+@media screen and (min-width: 1984px) {
+  .columns {
+    max-width: 2000px;
+  }
+}
+
+@media screen and (max-width: 1984px) {
+  .columns {
+    max-width: 1500px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .columns {
+    column-count: 2;
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .columns {
+    column-count: 2;
+    max-width: 480px;
+
+    & .column {
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+}

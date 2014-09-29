@@ -1,0 +1,38 @@
+---
+layout: default
+page_title: Deep Dive
+---
+
+<div class="page-description">
+  <p class="mb-4">
+    {% include quote.html %}
+  </p>
+
+  <p class="mt-4">
+    Learning how things work is deliberate practice for programmers. In these articles,
+    I explore interesting Ruby and JavaScript libraries, peek under the hood and demystify
+    their magic.
+  </p>
+
+  <p class="mt-4">
+    You can <a href="https://twitter.com/{{site.twitter.username}}">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed </a> if you'd like to follow along.
+  </p>
+
+  <p class="mt-4 mb-4">
+    {% include subscribe.html tag="articles"  %}
+  </p>
+</div>
+
+<ul class="list-reset tracking-wide">
+  {% for post in site.posts %}
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="{{ post.url }}">
+      {{ post.title }}
+    </a>
+
+    <p class="text-grey">
+      {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  </li>
+  {% endfor %}
+</ul>

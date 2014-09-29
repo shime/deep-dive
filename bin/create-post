@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# create-post
+
+# usage: create-post <OPTIONS> <TITLE>
+# 
+# Creates Jekyll post in ./_posts with the required format.
+# 
+# Options:
+# 
+#   --draft  Creates a draft.
+#   --til    Creates a TIL post.
+
+dir="_posts"
+original_title=$@
+
+if [[ $1 =~ --draft ]]; then
+  dir="_drafts"
+  original_title="${@:2}"
+fi
+
+if [[ $1 =~ --til ]]; then
+  dir="_til"
+  original_title="${@:2}"
+fi
+
+# replaces spaces in title with dashes
+title="`echo $original_title| tr ' ' '-'`"
+# adds required date format to file name of the post
+title="`date +"%Y-%m-%d"`-$title"
+filename="`echo $title | tr '[:upper:]' '[:lower:]'`"
+fullpath="$dir/$filename.md"
+cat <<EOF > $fullpath
+---
+layout: post
+title: `echo "${original_title^}"`
+categories: random
+---
+EOF
+vim $fullpath

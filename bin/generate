@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+./bin/generate-html && ./bin/generate-pdf
