@@ -312,7 +312,7 @@ Benoit's solution to this is much more elegant.
 
 ## Going deeper
 
-This leads us to `Rack::Builder#run`, which is being called in our `config.ru` script:
+Calling `run` in our `config.ru` script, means that our journey continues to `Rack::Builder#run`:
 
 
 {% source ruby loaction="https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/builder.rb#L162-L178" %}
@@ -337,7 +337,7 @@ end
 
 {% endsource %}
 
-Since there are no other method calls to follow, it looks like we've come to the bottom of this. Let's continue looking at branches that we've ignored previously.
+Since there are no other method calls to follow, it looks like we've come the end. Let's continue looking at branches that we've ignored previously.
 
 The last thing we ignored was `build_app` in `wrapped_app`<sup>[[&nearr;](#wrapped_app)]</sup>:
 
