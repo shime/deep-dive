@@ -4,7 +4,7 @@ title: Deep dive into Did You Mean
 categories: [ruby]
 ---
 
-<details><summary>License (MIT)</summary>
+<details><summary class="cursor-pointer outline-none">License (MIT)</summary>
 {% source bash %}
 (The MIT License)
 Copyright (c) 2014-2016 Yuki Nishijima

@@ -3,7 +3,7 @@ layout: post
 title: "Deep dive into Minitest"
 categories: [ruby]
 ---
-<details><summary>License (MIT)</summary>
+<details><summary class="cursor-pointer outline-none">License (MIT)</summary>
 {% source bash %}
 (The MIT License)
 
