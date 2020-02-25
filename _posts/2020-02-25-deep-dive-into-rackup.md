@@ -380,7 +380,7 @@ def default_middleware_by_environment
 end
 {% endsource %}
 
-This is going to build a chain of middleware that's going to look like this:
+`wrapped_app` is going to become a chain of middleware that's going to look like this:
 
 ```
 Rack::ContentLength ⟶
@@ -390,8 +390,6 @@ Rack::Lint ⟶
 Rack::TempfileReaper ⟶
 our app
 ```
-
-This is going to be the contents of `wrapped_app`.
 
 The next thing we ignored is `server.run`<sup>[[&nearr;](#server_run)]</sup>.
 
