@@ -147,7 +147,7 @@ module Jekyll
 
         %(<div class='source-location'>
           <a href='#{location.first}'>
-            #{location.first.split(%r{/blob/.*?/}).last}
+            #{location.first.split(%r{/blob/.*?/}).last} &nearr;
           </a>
         </div>)
       end
