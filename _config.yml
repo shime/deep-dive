@@ -54,3 +54,4 @@ exclude:
   - src
   - tailwind.config.js
   - Makefile
+  - yarn.lock
