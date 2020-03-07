@@ -12,9 +12,11 @@
           {% assign collection = page.collection %}
           {% if collection == "posts" %}  {% assign collection="articles" %} {% endif %}
 
+          {% if collection %}
           <div>
-            <a class="no-underline uppercase text-sm" href="/"> ← {{ collection }} </a>
+            <a class="no-underline uppercase text-sm" href="/{{collection}}"> ← {{ collection }} </a>
           </div>
+          {% endif %}
           <div class="mb-8">
             <h1>{{ page.title }}</h1>
             {% unless page.no_date %}
@@ -36,17 +38,19 @@
 
           <hr />
 
+          {% unless page.no_subscribe %}
           <div class="mt-12 mb-16">
-            {% include author.html %}
-          </div>
+             {% include author.html %}
+           </div>
 
           <p class="mt-4">
-            Did you like this article? You can <a href="https://twitter.com/{{site.twitter.username}}">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
+            Did you like this article?  You can <a href="https://twitter.com/{{site.twitter.username}}">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
 
             <div class="mt-2">
               {% include subscribe.html tag=collection %}
             </div>
           </p>
+          {% endunless %}
         </div>
       </div>
     </div>
