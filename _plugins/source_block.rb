@@ -90,9 +90,6 @@ module Jekyll
       def render_pygments(code, is_safe)
         Jekyll::External.require_with_graceful_fail('pygments') unless defined?(Pygments)
 
-        puts 'options: '
-        puts sanitized_opts(@highlight_options, is_safe)
-
         highlighted_code = Pygments.highlight(
           code,
           lexer: @lang,

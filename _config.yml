@@ -41,6 +41,8 @@ plugins:
   - jekyll-redirect-from
   - jekyll-responsive-image
   - jekyll-seo-tag
+  - jekyll-postcss
+  - jekyll-purgecss
 
 exclude:
   - Gemfile

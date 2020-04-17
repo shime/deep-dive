@@ -11,9 +11,11 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 gem 'github-pages', versions['github-pages']
 gem 'jekyll'
+gem 'jekyll-postcss'
+gem 'jekyll-purgecss'
 gem 'jekyll-responsive-image'
 gem 'jekyll-seo-tag'
 gem 'jemoji'
-gem 'redcarpet'
-gem 'pygments.rb'
 gem 'pry'
+gem 'pygments.rb'
+gem 'redcarpet'

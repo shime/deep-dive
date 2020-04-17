@@ -5,6 +5,7 @@
   "main": "gulpfile.config.js",
   "dependencies": {
     "html-pdf": "github:shime/node-html-pdf",
+    "postcss-cli": "^7.1.0",
     "postcss-nesting": "^4.2.1"
   },
   "devDependencies": {
