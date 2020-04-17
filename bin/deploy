@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-npm run build
+bundle exec jekyll build
 cd _site
 git add -A .
 git commit -m "site updated at `date +"%R UTC %z, %d-%b-%y"`"
