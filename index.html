@@ -30,8 +30,8 @@ page_title: Deep Dive
       {{ post.title }}
     </a>
 
-    <p class="text-grey">
-      {{ post.date | date: "%B %-d, %Y" }}
+    <p class="text-grey text-xs">
+     {{ post.date | date: "%Y-%m-%d" }}
     </p>
   </li>
   {% endfor %}
